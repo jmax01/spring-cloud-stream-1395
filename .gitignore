@@ -1,0 +1,51 @@
+
+# Eclipse #
+###################
+.classpath
+.project
+.metadata
+.factorypath
+.springBeans
+.settings/
+Servers/
+RemoteSystemsTempFiles/
+
+# IDEA #
+###################
+.idea
+*.ipr
+*.iws
+*.iml
+atlassian-ide-plugin.xml
+
+# Compiled source #
+###################
+*.class
+
+# Temporary/Build Files #
+###################
+*.patch
+#*.jar
+target/
+target-ide/
+build/
+pom.xml.versionsBackup
+
+
+# Logs #
+######################
+*.log
+*.log.*
+stats.log*
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+
+
+
+/tz-message-router/.springBeans
