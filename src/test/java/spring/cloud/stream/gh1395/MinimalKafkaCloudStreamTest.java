@@ -1,4 +1,4 @@
-package org.springframework.cloud.stream;
+package spring.cloud.stream.gh1395;
 
 import static java.util.stream.Collectors.*;
 import static org.junit.Assert.*;
@@ -14,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.cloud.stream.MinimalKafkaCloudStreamTest.TestConfig;
-import org.springframework.cloud.stream.MinimalKafkaCloudStreamTest.TestSpringBootApplicationConfig;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -38,6 +36,9 @@ import org.springframework.retry.policy.TimeoutRetryPolicy;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.test.context.junit4.rules.SpringClassRule;
 import org.springframework.test.context.junit4.rules.SpringMethodRule;
+
+import spring.cloud.stream.gh1395.MinimalKafkaCloudStreamTest.TestConfig;
+import spring.cloud.stream.gh1395.MinimalKafkaCloudStreamTest.TestSpringBootApplicationConfig;
 
 @SuppressWarnings("javadoc")
 // @formatter:off
@@ -103,7 +104,7 @@ public class MinimalKafkaCloudStreamTest {
     public void test() throws InterruptedException {
 
         // wait for kafka
-        TimeUnit.MILLISECONDS.sleep(1000);
+        TimeUnit.MILLISECONDS.sleep(2000);
 
         this.testPublisher.publish("PayloadSentToTestPublisher", "HeaderValueSentToTestPublisher");
 
@@ -157,7 +158,7 @@ public class MinimalKafkaCloudStreamTest {
 
             final RetryTemplate retryTemplate = new RetryTemplate();
 
-            final long timeoutInMilliseconds = 10000;
+            final long timeoutInMilliseconds = 5000;
 
             final ExponentialRandomBackOffPolicy backOffPolicy = new ExponentialRandomBackOffPolicy();
             retryTemplate.setBackOffPolicy(backOffPolicy);
