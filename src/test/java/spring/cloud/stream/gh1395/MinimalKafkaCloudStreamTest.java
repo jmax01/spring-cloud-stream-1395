@@ -104,7 +104,7 @@ public class MinimalKafkaCloudStreamTest {
     public void test() throws InterruptedException {
 
         // wait for kafka
-        TimeUnit.MILLISECONDS.sleep(2000);
+        TimeUnit.MILLISECONDS.sleep(5000);
 
         this.testPublisher.publish("PayloadSentToTestPublisher", "HeaderValueSentToTestPublisher");
 
